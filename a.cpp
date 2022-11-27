@@ -4,23 +4,21 @@ using namespace std;
 typedef long long ll;
 
 typedef pair<int, int> ii;
-typedef pair<ll, pair<ll,ll>> aresta; // a = arestas
+typedef pair<ll,ll> pll; // a = arestas
+typedef vector<pll> vpll;
 const ll MAXN = 10009;
 const ll INF = 10e9;
 int N, M;
 bool visited[MAXN];
 vector<ii> adjList[MAXN];
 
-struct arestas{
-    ll cost;
-    ii arestas;
-};
 
-int prim(priority_queue<ii> pq){
+
+int prim(){
     bool taken[MAXN];
     memset(&visited, MAXN, sizeof(bool));
     taken[0] = true;
-    // priority_queue<ii> pq;
+    priority_queue<ii> pq;
     ii v, front;
     int u, w;
     ll cost = 0;
@@ -50,24 +48,18 @@ int main(){
     vector <ll> g;
     vector <ll> stack;
     
-    arestas *Cidade = (arestas *) malloc(sizeof(arestas));
+    
 
     for(int i = 1; i <= n; i++){
         cin >> entrada[0] >> entrada[1] >> entrada[2]; 
-        g.push_back({entrada[2], {entrada[0], entrada[1]}});
+        adjList[entrada[0]][entrada[1]];
+        adjList[entrada[0]].push_back({entrada[1], entrada[2]});
     } 
 
-    sort(g.begin(), g.end());
-    for(int i = 0; i < c - 1; i++){
-        stack.push_back(i);
-    }
+    
+   
 
-    for(int i = 0; i < c - 1; i++){
-        
-        cont += g[i].first;
-    }
-
-    cost = prim(g.second);
+    
     cout << cost << "\n";
     // cout << cont << "\n";
 
