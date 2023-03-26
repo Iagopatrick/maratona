@@ -46,6 +46,8 @@ def main():
                         pilha.put(diagrama[contador])
                         fim = i
                         # print("aqui estou")
+                        for j in range(inicio, fim+1):
+                            diagrama[j] = ""
                         pilha = clear(pilha)
                         diamantes += 1
                         contador = 0
