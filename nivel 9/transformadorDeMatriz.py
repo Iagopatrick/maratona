@@ -7,8 +7,15 @@ while True:
         m = entrada[1] #comandos a serem feitos
         u = entrada[2] #numero máximo das entradas
         lista = []
+        listaMenor = [] #vou tentar dividir os numeros entre os que são maiores que a metade de u, pois v <= u
+        listaMaior = []
         for i in range(n):
-            lista.append(int(input()))
+            a = int(input())
+            lista.append(a)
+            if a > u/2:
+                listaMaior.append(a)
+            else:
+                listaMenor.append(a)
         for k in range(m):
             comandos = [int(i) for i in input().split()]
             l = comandos[0] - 1 #indice inicial para começar a comparação, vou colocar -1 para começar em 0, começo da lista

@@ -2,28 +2,29 @@ import queue
 def main():
     while True:
         try:
+            entrada = ""
             pilha = queue.LifoQueue()
             entrada = input()
+            if entrada == "":
+                break
             saida = "incorrect"
             balanco = 0
             for caracter in entrada:
                 if pilha.empty() and caracter == ')':
-                    balanco -= 1
-                    break
-                elif caracter == '(' and balanco < 0:
+                    print("incorrect")
                     break
                 elif caracter == ')':
+                    balanco -= 1
                     pilha.put(caracter)
-                    balanco += -1
                 elif caracter == '(':
-                    pilha.put(caracter)
                     balanco += 1
-
-            if balanco == 0:
+                    pilha.put(caracter)
+            if balanco == 0 and not pilha.empty():
                 saida = "correct"
+                
 
             print(saida)
-        except:
+        except EOFError:
             break
 
 main()

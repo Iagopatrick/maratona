@@ -5,7 +5,7 @@ typedef long long ll;
 
 int main(){
     
-    while (EOF){
+    do{
         ll num1, num2, resultado;
         cin >> num1 >> num2;
 
@@ -16,7 +16,7 @@ int main(){
         }
         cout << resultado << "\n";
         
-    }
+    }while(EOF);
 
 
     return 0;
