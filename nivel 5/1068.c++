@@ -7,28 +7,27 @@ int main(){
     string expression;
     while(cin >> expression){
         char a;
-        ll cont = 0;
-        stack<char> lista;
+        
+        stack<char> pilha;
 
         for(ll i = 0; i < expression.length(); i++){
             a = expression[i];
-            if(a == ')' && lista.empty()){
-                cout << "incorrect\n";
+            if(a == '('){
+                pilha.push(a);
+            }else if(a == ')' && !pilha.empty()){
+                pilha.pop();
             }else if(a == ')'){
-                cont++;
-                lista.push(a);
-            }else if(a == '('){
-                cont--;
-                lista.push(a);
+                pilha.push(a);
+                break;
             }
+        }
 
-        if(cont == 0){
+        if(pilha.empty()){
             cout << "correct" << "\n";
         }else{
             cout << "incorrect" << "\n";
         }
-        cout << "passei por aqui \n";
-        }
+        
     };
 
 
