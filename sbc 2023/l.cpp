@@ -1,4 +1,3 @@
-// Comparação de substring
 #include <bits/stdc++.h>
 #include <bits/extc++.h>
 
@@ -15,22 +14,23 @@ typedef unsigned long long llu;
 #define mmc(a, b) (((a)/__gcd(a, b)) * b)
 #define W(x) cerr << "\033[31m"<< #x << " = " << x << "\033[0m" << endl;
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define FOR(i, a, b) for(ll i = (a); i< ll(b); ++i)
+
 
 int main(){
-    FASTIO;
-    string p;
-    char c;
     ll n;
+    string word, nword;
+    vector<char> w;
 
-    cin >> p >> n;
-    for(ll i = 0; i < p.size(); i += n){
-        c = p[i];
-        p[i] = p[n -i];
-        p[n-i] = c;
-        cout << p[i] << endl;
+    bool index = true;
+    cin >> word >> n;
+    FOR(i,0,word.size()){
+        w.push_back(word[i]);
     }
-    cout << p << endl;
+    while(index){
+
+    }
+    //itera do lado direito e do lado esquerdo dir-> njoab - ojnab - oanjb // <-esq - njbao - nabjo - banjo
 
     return 0;
 }
-
