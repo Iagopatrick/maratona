@@ -1,10 +1,16 @@
-s,k  = input().split()
-k = int(k)
-s1 = [i for i in s]
-for i in range(0,len(s),k):
-    aux = s1[i]
-    s1[i] = s1[k-i]
-    s1[k-i] = aux
-    print(s1)
+word = input()
+n = int(input())
+wordB = word
+wordC = word
+wordG = wordB
+s = len(word)
+for i in range(int(len(word)/2)):
+    
+    wordB[i+n] = word[i]
+    wordB[i] = word[i + n]
 
-print(s1)
+    wordC[s-i] = word[s - n]
+    wordC[s - n] = word[s-i]
+
+    wordG = wordC if wordC > wordB else wordB
+print(wordG)

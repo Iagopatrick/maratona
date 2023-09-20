@@ -1,4 +1,3 @@
-// Comparação de substring
 #include <bits/stdc++.h>
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
@@ -30,7 +29,18 @@ typedef vector<pll> vpll;
 
 int main(){
     FASTIO;
-
+    ll a ,aa,b, bb;
+    cin >> a >> b;
+    bb = b;
+    aa = a;
+    FOR(i, 1, aa){
+        b *= bb;
+        
+    }
+    FOR(i, 1, bb){
+        a *= aa;
+    }
+    cout << a+b << endl;
     return 0;
 }
 

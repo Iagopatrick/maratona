@@ -1,4 +1,7 @@
-// Comparação de substring
+
+
+
+
 #include <bits/stdc++.h>
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
@@ -28,9 +31,49 @@ typedef vector<pll> vpll;
 #define W(x) cerr << "\033[31m"<< #x << " = " << x << "\033[0m" << endl;
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+
+int dp[1001][1001];
+bool isPalindrome(string &s, ll i, ll j) {
+    if (i > j)
+        return 1;
+    if (dp[i][j] != -1)
+        return dp[i][j];
+    if (s[i] != s[j])
+        return dp[i][j] = 0;
+    return dp[i][j] = isPalindrome(s, i + 1, j - 1);
+}
+
+ll lenMax(string &s, ll l, ll r){
+    if(l == r){
+        
+        return dp[l][r] = 1;
+    }
+    else if(l + 1 == r){
+        return s[l] == s[r]? dp[l+1][r] = 2:dp[l+1][r] = 1;
+    }
+    if(s[l] == s[r]){
+        
+        return 2 + lenMax(s, l+1, r-1);
+    }else{
+        
+        return max(lenMax(s, l, r-1), lenMax(s, l+1, r));
+    }
+
+
+
+}
+
+
+
 int main(){
     FASTIO;
+    string s;
+    ll lenOfMaxPalindrome;
+    memset(dp, 0, sizeof(dp));
+    cin >> s;
+    lenOfMaxPalindrome = lenMax(s, 0, s.size());
+    cout << lenOfMaxPalindrome << endl;
 
-    return 0;
 }
+
 

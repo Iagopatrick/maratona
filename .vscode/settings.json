@@ -68,6 +68,10 @@
         "typeindex": "cpp",
         "typeinfo": "cpp",
         "valarray": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "rope": "cpp",
+        "string_view": "cpp",
+        "slist": "cpp",
+        "ranges": "cpp"
     }
 }

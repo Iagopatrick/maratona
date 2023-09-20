@@ -20,16 +20,26 @@ typedef unsigned long long llu;
 int main(){
     ll n;
     string word, nword;
-    vector<char> w;
+    vector<char> w1, w2;
 
     bool index = true;
-    cin >> word >> n;
-    FOR(i,0,word.size()){
-        w.push_back(word[i]);
-    }
-    while(index){
 
+    cin >> word >> n;
+    
+    FOR(i,0,word.size()){
+        w1.push_back(word[i]);
+        w2.push_back(word[i]);
     }
+    FOR(i, 0, n){
+        if(w1[i] > w1[i+n]){
+            w2[i] = w1[i+n];
+            w2[i+n] = w1[i];
+        }
+    }
+    FOR(i, 0, word.size()){
+        cout << w2[i] << "";
+    }
+
     //itera do lado direito e do lado esquerdo dir-> njoab - ojnab - oanjb // <-esq - njbao - nabjo - banjo
 
     return 0;
