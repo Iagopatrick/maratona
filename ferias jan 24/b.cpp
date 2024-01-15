@@ -26,21 +26,36 @@ typedef vector<pll> vpll;
 #define mmc(a, b) (((a)/__gcd(a, b)) * b)
 #define W(x) cerr << "\033[31m"<< #x << " = " << x << "\033[0m" << endl;
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
-typedef struct point{
-    ll x, y;
-}Point;
 
+// b = 0 and a = 1 then i do 1 moviment
+// b = 1 and a = 1 so i dont do anything
+// b = 0 and a = 0 so i dont do anything
+// b = 1 and a = 0 then i have 1 credit
+// if i have 1 credit and my moviments is over, i plus the credits to the moviments
 int main(){
     FASTIO;
-    ll numberTests, nBoxes;
-    string before, after;
+    ll numberTests, nBoxes, moviments, credits;
+    string b, a;
+    cin >> numberTests;
     FOR(i, 0, numberTests){
-        cin >> nBoxes
-        cin >> before >> after;
-
-
-
-
+        cin >> nBoxes;
+        cin >> b >> a;
+        credits = 0;
+        moviments = 0;
+        FOR(j, 0, nBoxes){
+            if(b[j] == a[j]){
+                continue;
+            }else if(b[j] == '0' && a[j] == '1'){
+                moviments++;
+            }else{
+                credits++;
+            }
+        }
+        if(moviments - credits < 0){
+            moviments += abs(moviments - credits);
+        }
+        
+        cout << moviments << endl;
     }
 
     return 0;
