@@ -32,33 +32,37 @@ typedef struct point{
 
 int main(){
     FASTIO;
-    ll t, n, f, a, b, time = 0;
+    ll t, n, f, a, b, tm = 0;
     cin >> t;
     FOR(i, 0, t){
         cin >> n >> f >> a >> b;
         vll messages;
         ll temp;
+        tm = 0;
         FOR(j, 0, n){
             cin >> temp;
             messages.push_back(temp);
             
         }
         FOR(j, 0, n){
-            if(abs(messages[j] - time) >= b || abs(messages[j] - time) * a >= b){
-                time += messages[j];
+            if(messages[j] - tm >= b || (messages[j] - tm) * a >= b){
+                tm = messages[j];
                 f -= b;
                 
+                
             }else{
-                f -= a * messages[j];
+                f -= a * (messages[j] - tm);
+                tm = messages[j];
             }
             if(f < 0) break;
+            
         }
-        cout << f << "<-f" << endl;
         if(f > 0){
             cout << "YES" << endl;
         }else{
             cout << "NO" << endl;
         }
+        
     }
     return 0;
 }
