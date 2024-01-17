@@ -45,11 +45,13 @@ int main(){
             
         }
         FOR(j, 0, n){
+            //tm is the current time, f is the charge of phone, a its the cost of battery for time and b is the cost of turn off the phone, wait the 
+            //time of message, turn it on and send the message
             if(messages[j] - tm >= b || (messages[j] - tm) * a >= b){
                 tm = messages[j];
                 f -= b;
                 
-                
+    
             }else{
                 f -= a * (messages[j] - tm);
                 tm = messages[j];
