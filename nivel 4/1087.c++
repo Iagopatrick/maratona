@@ -29,7 +29,16 @@ typedef vector<pll> vpll;
 
 int main(){
     FASTIO;
-
+    ll y0,x0, y,x;
+    while(!(y0 == 0 && x0 == 0 && y == 0 && x == 0)){
+        cin >>x0 >> y0 >> x >> y;
+        if(y0 == 0 && x0 == 0 && y == 0 && x == 0) continue;
+        ll difx, dify, sol;
+        difx = abs(x - x0);
+        dify = abs(y - y0);
+        sol = difx == 0 && dify == 0? 0: max(difx, dify)/min(difx, dify);
+        cout << sol << endl;
+    }
     return 0;
 }
 

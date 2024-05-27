@@ -27,8 +27,31 @@ typedef vector<pll> vpll;
 #define W(x) cerr << "\033[31m"<< #x << " = " << x << "\033[0m" << endl;
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+typedef struct crianca{
+    string name;
+    ll i;
+};
+
 int main(){
     FASTIO;
+    ll n;
+    cin >> n;
+    vector<crianca> quartos;
+    vector<crianca> cria;
+    
+    FOR(i, 0, n){
+        crianca temp;
+        string a;
+        cin >> a;
+        temp.i = i;
+        temp.name = a;
+        quartos.PB(temp);
+    }
+    FOR(i, 0, n){
+        string temp;
+        cin >> temp;
+        cria.PB(temp);
+    }
 
     return 0;
 }

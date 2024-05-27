@@ -1,3 +1,4 @@
+// Comparação de substring
 #include <bits/stdc++.h>
 #include <bits/extc++.h>
 using namespace __gnu_pbds;
@@ -27,8 +28,28 @@ typedef vector<pll> vpll;
 #define W(x) cerr << "\033[31m"<< #x << " = " << x << "\033[0m" << endl;
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+ll numberEven(ll y){
+    ll aux = y/2;
+    while(aux % 2 != 0){
+        aux /= 2;
+    }
+    return aux;
+}
+
+ll g(ll a){
+    ll y = numberEven(a);
+    for(ll i = 2)
+}
+
 int main(){
     FASTIO;
+    ll t, y, x;
+    cin >> t;
+    FOR(i, 0, t){
+        cin >> x;
+
+    }
+
 
     return 0;
 }

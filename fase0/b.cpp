@@ -27,8 +27,25 @@ typedef vector<pll> vpll;
 #define W(x) cerr << "\033[31m"<< #x << " = " << x << "\033[0m" << endl;
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 
+
+void floyd(int n){
+    int d[n][n];
+    int u, v, w;
+    cin >> u >> v >> w;
+    d[u][v] = w;
+    d[v][u] = w;
+    for (int k = 0; k < n; ++k) {
+        
+        for (int j = 0; j < n; ++j) {
+            d[0][j] = min(d[0][j], d[0][k] + d[k][j]); 
+        }
+        
+    }
+}
 int main(){
     FASTIO;
+    int n;
+    cin >> n;
 
     return 0;
 }
